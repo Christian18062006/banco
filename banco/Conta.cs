@@ -13,7 +13,7 @@ namespace banco
             {
                 return _saldo;
             }
-            set
+            private set
             {
                 _saldo = value;
             }

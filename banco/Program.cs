@@ -35,11 +35,6 @@ namespace banco
                 Console.WriteLine("Digite 5 para fechar o menu do caixa eletrônico.");
                 Console.WriteLine("Digite 1 para sacar. ou digite 2 para depositar.");
                 opcao = int.Parse(Console.ReadLine());
-                if (opcao==5)
-                {
-                    Console.WriteLine("O banco central agradece.");
-                    break;
-                }
                 switch (opcao)
                 {
                     case 1:
