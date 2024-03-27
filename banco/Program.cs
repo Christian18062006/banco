@@ -35,24 +35,19 @@ namespace banco
                 Console.WriteLine("Digite 5 para fechar o menu do caixa eletrônico.");
                 Console.WriteLine("Digite 1 para sacar. ou digite 2 para depositar.");
                 opcao = int.Parse(Console.ReadLine());
+                if (opcao==5)
+                {
+                    Console.WriteLine("O banco central agradece.");
+                    break;
+                }
                 switch (opcao)
                 {
                     case 1:
                         {
-                            Console.WriteLine("Digite o valor do saque, um valor de $5 será debitado da sua conta.");
+                            Console.WriteLine("Digite o valor de saque, será debitado $5.00 de tacha.");
                             valor = double.Parse(Console.ReadLine());
-                            if (conta.Saldo < 0)
-                            {
-                                conta.setSaque(valor);
-                                Console.WriteLine("Saque realizado, mais agora você está com um saldo negativo. \n");
-                                Console.WriteLine($"Dados da conta atualmente: {conta} \n");
-                            }
-                            else
-                            {
-                                conta.setSaque(valor);
-                                Console.WriteLine("Saque realizado, e você continua com um saldo positivo.");
-                                Console.WriteLine($"Dados da conta atualmente: {conta} \n");
-                            }
+                            conta.setSaque(valor);
+                            Console.Write($"Dados da conta atualmente: {conta}");
                             break;
                         }
                     case 2:
@@ -61,11 +56,12 @@ namespace banco
                             valor = double.Parse(Console.ReadLine());
                             conta.setDeposito(valor);
                             Console.WriteLine("Depósito realizado.");
+                            Console.WriteLine($"Dados da conta atualmente: {conta} \n");
                             break;
                         }
                     default:
                         {
-                            Console.WriteLine("inválido, o menu será encerrado.");
+                            Console.WriteLine("Opção inválida.");
                             break;
                         }
                 }

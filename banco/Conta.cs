@@ -6,18 +6,25 @@ namespace banco
 {
     class Conta
     {
+        private double _saldo;
+        public double Saldo
+        {
+            get
+            {
+                return _saldo;
+            }
+            set
+            {
+                _saldo = value;
+            }
+        }
         public string Titular
         {
             get;
-            set
-      ;
+            set;
         }
-        public double Saldo
-        {
-            get;
-            private set;
-        }
-        public int NumeroConta
+
+public int NumeroConta
         {
             get;
             private set;
@@ -31,16 +38,15 @@ namespace banco
         {
             Saldo = saldo;
         }
+public void setDeposito(double valor)
+        {
+            Saldo+=valor;
+        }
         public void setSaque(double valor)
         {
-            Saldo -= valor;
-            Saldo -= 5;
+            Saldo-=valor+5;
         }
-        public void setDeposito(double valor)
-        {
-            Saldo += valor;
-        }
-        public override string ToString()
+public override string ToString()
         {
             return ($"Titular: {Titular} \n número da conta: {NumeroConta} \n saldo atual: {Saldo.ToString("C2")}");
         }
