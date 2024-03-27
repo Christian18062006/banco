@@ -44,12 +44,14 @@ namespace banco
                             if (conta.Saldo < 0)
                             {
                                 conta.setSaque(valor);
-                                Console.WriteLine("Saque realizado, mais agora você está com um saldo negativo.");
+                                Console.WriteLine("Saque realizado, mais agora você está com um saldo negativo. \n");
+                                Console.WriteLine($"Dados da conta atualmente: {conta} \n");
                             }
                             else
                             {
                                 conta.setSaque(valor);
                                 Console.WriteLine("Saque realizado, e você continua com um saldo positivo.");
+                                Console.WriteLine($"Dados da conta atualmente: {conta} \n")
                             }
                             break;
                         }
